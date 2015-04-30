@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+require_relative 'config/application'
+require_relative 'app/controllers/controller'
+
+# puts "REMEMBER! ? ?   ????? that's why you're using EP-TODO:"
+argv = ARGV
+
+controller = Controller.new
+
+command = argv.shift
+params = argv
+case command
+
+else  controller.man
+end
