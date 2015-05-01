@@ -2,6 +2,7 @@ require_relative './../../config/application'
 
 
 class Cow < ActiveRecord::Base
+  has_many :offsprings
   def check
     {hunger: hunger, age:age_in_seconds }
   end
@@ -41,6 +42,14 @@ class Cow < ActiveRecord::Base
   end
 
   def procreate
-    s
-  end
+    species_selection = ['Calf', 'Grumpy Cat', 'Chicken', 'Dragon']
+    mob_size = Rand(2..4)
+    mob = []
+
+    mob_size.times do
+
+    end
+    #returns array of animals
+ end
+
 end
