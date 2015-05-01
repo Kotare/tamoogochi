@@ -42,7 +42,7 @@ class Cow < ActiveRecord::Base
     hunger_level
   end
 
-  def procreate
+  def birth
     species_selection = ['Calf', 'Grumpy Cat', 'Chicken', 'Dragon']
     mob_size = Rand(2..4)
     mob = []

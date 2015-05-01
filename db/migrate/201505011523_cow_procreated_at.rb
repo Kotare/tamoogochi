@@ -1,11 +1,8 @@
 require_relative '../../config/application'
 
-class CreateOffsprings < ActiveRecord::Migration
+class cowProcreated_at < ActiveRecord::Migration
   def change
-    create_table :offsprings do |t|
-      t.string :species
-      t.timestamps null: false
-      t.belongs_to :cow, index: true
-    end
+    add_column :cows, :procreated_at, :datetime
+    add_column :cows, :gave_birth_at, :datetime
   end
 end
