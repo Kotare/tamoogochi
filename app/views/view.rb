@@ -16,7 +16,7 @@ class View
         x = '$'
       end
       system('clear')
-      question = '??????????' if count > 4
+      question = '??????????' if count > 9
       pail_bottom.gsub!(/./,'$') if count > 7
       pail_mid.gsub!(/.{1}/,'$') if count > 14
       winner = '*****YOU REARED A CASH COW!!!******' if count > 18
@@ -45,6 +45,8 @@ class View
               #{question}
 
         #{winner}
+
+        
 UDDER
       puts udders
       sleep(0.2)
