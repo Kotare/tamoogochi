@@ -10,13 +10,12 @@ class Controller
   end
 
   def check
-    model.check
-    view.check
+    @view.check(@model.check)
   end
 
   def feed
-    model.feed
-    view.feed
+    @model.feed
+    @view.feed
   end
 
 end
