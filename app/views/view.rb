@@ -88,16 +88,97 @@ CHECK
      |  ,,,,----'''```|
      |``   @    @     |
       \\,,    ___    ,,/
-         \\__|   |__/
-            | | |     CHOMP
+         \\__|   |__/  GETS
+  GETS       | | |     CHOMP
   CHOMP     \\ | /
 
 ---------FEEDING YOUR COW--------
 FEED
   end
 
+  def print_calf
+    puts "Giving birth to a baby calf..."
+    sleep(3)
+    puts <<-CALF
+           (    )
+            (oo)
+   )\\.-----/(O O)
+  # ;       / u
+    (  .   |} )
+     |/ `.;|/;
+     "     " "
+  CALF
+  end
+
+  def print_chick
+    puts "Giving birth to a baby chick..."
+    sleep(3)
+
+    puts <<-CHICK
+       .---.
+    _ /     ' .---.
+    >|  o    `     `\\
+    ` \\       .---._ '._ ,
+       '-.;         /`  /'
+          \\    '._.'   /
+           '.        .'
+             `";--\\_/
+      jgs    _/_   |
+          -'`/  .--;--
+            '    .'
+    CHICK
+  end
+
+  def print_grumpy_cat
+    puts "Giving birth to a baby cat..."
+    sleep(3)
+
+    puts <<-CAT
+
+ _._     _,-'""`-._       GRUMPY CAT RULES!
+(,-.`._,'(       |\\`-/|
+    `-.-' \\ )-`( , o o)
+-bf-      `-    \\`_`"'-   ALL HAIL THE MIGHTY GRUMP!
+    CAT
+  end
+
+  def print_dragon
+    puts "Giving birth to a baby dragon..."
+    sleep(3)
+
+    puts <<-DRAGON
+           |\\___/|
+            (,\\  /,)\\
+            /     /  \\
+           (@_^_@)/   \\
+            W//W_/     \\
+          (//) |        \\
+        (/ /) _|_ /   )  \\
+      (// /) '/,_ _ _/  (~^-.
+    (( // )) ,-{        _    `.
+   (( /// ))  '/\\      /      |
+   (( ///))     `.   {       }
+    ((/ ))    .----~-.\\   \\-'
+             ///.----..>   \\
+              ///-._ _  _ _}
+    DRAGON
+  end
+
+  def give_birth(offspring)
+    offspring.each do |baby|
+      case baby.species
+      when :calf then print_calf
+      when :grumpy_cat then print_grumpy_cat
+      when :chicken then print_chick
+      when :dragon then print_dragon
+      else puts "No babies today"
+      end
+    end
+  end
+
   def manual
     puts "Valid commands: check, feed, milk"
   end
-
 end
+
+
