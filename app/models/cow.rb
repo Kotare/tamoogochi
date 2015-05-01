@@ -3,7 +3,7 @@ require_relative './../../config/application'
 
 class Cow < ActiveRecord::Base
   def check
-    {"hunger:" => hunger, "age:" => age_in_seconds }
+    {hunger: hunger, age:age_in_seconds }
   end
 
   def feed

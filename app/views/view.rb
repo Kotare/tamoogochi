@@ -1,4 +1,4 @@
-require 'colorize'
+# require 'colorize'
 
 class View
   def milk
@@ -58,14 +58,15 @@ UDDER
 
   def check(args)
     hunger = args[:hunger]
-    age = args[:age]
-    puts <<-CHECK
+    age = args[:age].to_s
+    check = <<-CHECK
 *********TA-MOOOO-GOTCHI**********
 ----------------------------------
-Hunger: #{hunger}
-Age:    #{age}
+Hunger:   #{hunger}
+Cow time: #{age}
 ---------------------------------
 CHECK
+    puts check
   end
 
   def feed
@@ -77,19 +78,19 @@ CHECK
    888            888
   d88             888b
   888             d88P
-  Y888b  /``````\8888
-,----Y888        Y88P`````\
-|        ,'`\_/``\ |,,    |
- \,,,,-| | o | o / |  ```'
+  Y888b  /``````\\8888
+,----Y888        Y88P`````\\
+|        ,'`\\_/``\\ |,,    |
+ \\,,,,-| | o | o / |  ```'
        |  """ """  |
-      /             \
-     |               \
+      /             \\
+     |               \\
      |  ,,,,----'''```|
      |``   @    @     |
-      \,,    ___    ,,/
-         \__|   |__/
+      \\,,    ___    ,,/
+         \\__|   |__/
             | | |     CHOMP
-  CHOMP     \ | /
+  CHOMP     \\ | /
 
 ---------FEEDING YOUR COW--------
 FEED
@@ -100,7 +101,3 @@ FEED
   end
 
 end
-
-view = View.new
-
-view.milk

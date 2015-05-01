@@ -2,14 +2,13 @@
 require_relative 'config/application'
 require_relative 'app/controllers/controller'
 
-argv = ARGV
 class Router
   attr_reader :controller
   def initialize(argv)
     @controller = Controller.new
-    self.route
+    self.route(argv)
   end
-  def route
+  def route(argv)
     command = argv.shift
     params = argv
     case command
@@ -17,6 +16,7 @@ class Router
     when 'feed' then controller.feed
     when 'check' then controller.check
     when 'milk' then controller.milk
+    when 'procreate' then controller.milk
     else  controller.man
     end
   end

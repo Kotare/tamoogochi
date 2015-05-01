@@ -1,4 +1,4 @@
-require_relative './../models/list.rb'
+require_relative './../models/cow.rb'
 require_relative './../views/view.rb'
 
 
@@ -6,11 +6,12 @@ class Controller
 
   def initialize
     @view = View.new
-    @model = Model.new
+    @cow = Cow.all.first
+    @cow ||= Cow.new({fed_at:Time.now, milked_at:Time.now})
   end
 
   def check
-    @view.check(@model.check)
+    @view.check(@cow.check)
   end
 
   def milk
@@ -25,8 +26,12 @@ class Controller
   end
 
   def feed
-    @model.feed
+    @cow.feed
     @view.feed
+  end
+
+  def procreate
+    @view.procreate
   end
 
 
