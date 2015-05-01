@@ -50,6 +50,10 @@ UDDER
     sleep(0.5)
   end
 
+  def dry
+    puts "Woah now, you only just milked her! Give the lady some time!"
+  end
+
 end
 
 view = View.new
