@@ -20,6 +20,7 @@ class Router
     else  controller.man
     end
   end
+
 end
 
 router = Router.new(ARGV)

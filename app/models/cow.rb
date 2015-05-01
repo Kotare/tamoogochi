@@ -12,12 +12,13 @@ class Cow < ActiveRecord::Base
   end
 
   def milked
-    self.milked_at = Time.now
-    self.save
+    self.update(milked_at: Time.now)
   end
 
-  def last_milked
-    Time.now - self.milked_at
+  def milkable?
+    time_since_milked = Time.now - self.milked_at
+    min_time_between_milking = 30
+    time_since_milked > min_time_between_milking
   end
 
   private
@@ -41,42 +42,15 @@ class Cow < ActiveRecord::Base
     hunger_level
   end
 
-
   def self.procreate
     species_selection = ['Calf', 'Grumpy Cat', 'Chicken', 'Dragon']
     mob_size = rand(2..4)
     mob = []
-
-
     mob_size.times do
       args = {species: species_selection.sample}
       mob << Offspring.new(args)
     end
     mob
  end
+
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
