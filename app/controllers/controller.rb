@@ -31,7 +31,7 @@ class Controller
   end
 
   def procreate
-    @view.procreate
+    @view.give_birth(@cow.procreate)
   end
 
 
