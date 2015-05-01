@@ -42,15 +42,17 @@ class Cow < ActiveRecord::Base
   end
 
 
-  def procreate
+  def self.procreate
     species_selection = ['Calf', 'Grumpy Cat', 'Chicken', 'Dragon']
-    mob_size = Rand(2..4)
+    mob_size = rand(2..4)
     mob = []
 
-    mob_size.times do
 
+    mob_size.times do
+      args = {species: species_selection.sample}
+      mob << Offspring.new(args)
     end
-    #returns array of animals
+    mob
  end
 end
 
