@@ -39,4 +39,8 @@ class Cow < ActiveRecord::Base
     end
     hunger_level
   end
+
+  def procreate
+    s
+  end
 end

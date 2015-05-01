@@ -20,6 +20,9 @@ class Router
     else  controller.man
     end
   end
+  def procreate
+    s
+  end
 end
 
 router = Router.new(ARGV)
