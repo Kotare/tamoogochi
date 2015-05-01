@@ -16,7 +16,7 @@ class Router
     when 'feed' then controller.feed
     when 'check' then controller.check
     when 'milk' then controller.milk
-    when 'procreate' then controller.milk
+    when 'procreate' then controller.procreate
     else  controller.man
     end
   end

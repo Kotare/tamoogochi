@@ -11,6 +11,17 @@ class Cow < ActiveRecord::Base
     self.update(fed_at: Time.now)
   end
 
+  def procreate
+    species_selection = ['Calf', 'Grumpy Cat', 'Chicken', 'Dragon']
+    mob_size = rand(2..4)
+    mob = []
+    mob_size.times do
+      args = {species: species_selection.sample}
+      mob << Offspring.new(args)
+    end
+    mob
+  end
+
   def milked
     self.update(milked_at: Time.now)
   end
@@ -41,16 +52,5 @@ class Cow < ActiveRecord::Base
     end
     hunger_level
   end
-
-  def self.procreate
-    species_selection = ['Calf', 'Grumpy Cat', 'Chicken', 'Dragon']
-    mob_size = rand(2..4)
-    mob = []
-    mob_size.times do
-      args = {species: species_selection.sample}
-      mob << Offspring.new(args)
-    end
-    mob
- end
 
 end

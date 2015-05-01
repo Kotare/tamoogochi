@@ -7,7 +7,7 @@ class Controller
   def initialize
     @view = View.new
     @cow = Cow.all.first
-    @cow ||= Cow.new({fed_at:Time.now, milked_at:Time.now})
+    @cow ||= Cow.create({fed_at:Time.now, milked_at:Time.now})
   end
 
   def check
@@ -34,5 +34,8 @@ class Controller
     @view.give_birth(@cow.procreate)
   end
 
+  def man
+    @view.manual
+  end
 
 end

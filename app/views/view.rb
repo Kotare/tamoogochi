@@ -63,7 +63,7 @@ UDDER
 *********TA-MOOOO-GOTCHI**********
 ----------------------------------
 Hunger:   #{hunger}
-Cow time: #{age}
+Age:      #{age} cow minutes
 ---------------------------------
 CHECK
     puts check
@@ -165,20 +165,32 @@ FEED
   end
 
   def give_birth(offspring)
+    system('clear')
+    puts <<-DND
+
+    A BULL? broke through the fence...
+
+    *************************
+    *    DO NOT DISTURB     *
+    *************************
+
+DND
+
+    sleep(5)
+    system('clear')
     offspring.each do |baby|
+      puts
       case baby.species
-      when :calf then print_calf
-      when :grumpy_cat then print_grumpy_cat
-      when :chicken then print_chick
-      when :dragon then print_dragon
+      when 'Calf' then print_calf
+      when 'Grumpy Cat' then print_grumpy_cat
+      when 'Chicken' then print_chick
+      when 'Dragon' then print_dragon
       else puts "No babies today"
       end
     end
   end
 
   def manual
-    puts "Valid commands: check, feed, milk"
+    puts "Valid commands: check, feed, milk, procreate"
   end
 end
-
-
