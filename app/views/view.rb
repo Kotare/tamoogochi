@@ -1,3 +1,5 @@
+require 'colorize'
+
 class View
   def milk
     system('clear')
@@ -52,6 +54,32 @@ UDDER
 
   def dry
     puts "Woah now, you only just milked her! Give the lady some time!"
+  end
+
+  def check(args)
+    hunger = args[:hunger]
+    age = args[:age]
+
+  end
+
+  def feed
+    FEED>>
+    ************TA-MOOOO-GOTCHI*************
+
+
+
+
+
+
+
+    ------------FEEDING YOUR COW-----------
+    FEED
+  end
+
+  def manual
+    feed
+    check
+
   end
 
 end
