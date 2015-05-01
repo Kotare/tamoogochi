@@ -2,14 +2,23 @@
 require_relative 'config/application'
 require_relative 'app/controllers/controller'
 
-# puts "REMEMBER! ? ?   ????? that's why you're using EP-TODO:"
 argv = ARGV
-
-controller = Controller.new
-
-command = argv.shift
-params = argv
-case command
-
-else  controller.man
+class Router
+  attr_reader :controller
+  def initialize(argv)
+    @controller = Controller.new
+    self.route
+  end
+  def route
+    command = argv.shift
+    params = argv
+    case command
+    # when 'get' then controller.new_cow #=> reset db?
+    when 'feed' then controller.feed
+    when 'check' then controller.check
+    else  controller.man
+    end
+  end
 end
+
+router = Router.new(ARGV)
