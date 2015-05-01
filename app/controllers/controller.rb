@@ -15,9 +15,7 @@ class Controller
   end
 
   def milk
-    last_milked = @cow.last_milked
-    min_time_between_milking = 2
-    if last_milked > min_time_between_milking
+    if @cow.milkable?
       @view.milk
       @cow.milked
     else

@@ -12,12 +12,13 @@ class Cow < ActiveRecord::Base
   end
 
   def milked
-    self.milked_at = Time.now
-    self.save
+    self.update(milked_at: Time.now)
   end
 
-  def last_milked
-    Time.now - self.milked_at
+  def milkable?
+    time_since_milked = Time.now - self.milked_at
+    min_time_between_milking = 30
+    time_since_milked > min_time_between_milking
   end
 
   private
@@ -45,9 +46,7 @@ class Cow < ActiveRecord::Base
     species_selection = ['Calf', 'Grumpy Cat', 'Chicken', 'Dragon']
     mob_size = Rand(2..4)
     mob = []
-
     mob_size.times do
-
     end
     #returns array of animals
  end
