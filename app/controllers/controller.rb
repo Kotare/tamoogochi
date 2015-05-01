@@ -11,7 +11,9 @@ class Controller
   end
 
   def check
-    @view.check(@cow.check)
+    check = @cow.check
+    @view.check(check)
+
   end
 
   def milk
