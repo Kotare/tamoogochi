@@ -16,6 +16,7 @@ class Router
     # when 'get' then controller.new_cow #=> reset db?
     when 'feed' then controller.feed
     when 'check' then controller.check
+    when 'milk' then controller.milk
     else  controller.man
     end
   end

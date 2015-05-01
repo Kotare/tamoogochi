@@ -10,8 +10,13 @@ class Cow < ActiveRecord::Base
     self.update(fed_at: Time.now)
   end
 
-  def milk
+  def milked
+    self.milked_at = Time.now
+    self.save
+  end
 
+  def last_milked
+    Time.now - self.milked_at
   end
 
   private
