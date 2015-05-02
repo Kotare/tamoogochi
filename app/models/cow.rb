@@ -4,7 +4,7 @@ require_relative './../../config/application'
 class Cow < ActiveRecord::Base
   has_many :offsprings
   def check
-    {hunger: hunger, age:age_in_seconds }
+    { hunger: hunger, age:age_in_seconds }
   end
 
   def feed
@@ -28,7 +28,7 @@ class Cow < ActiveRecord::Base
 
   def milkable?
     time_since_milked = Time.now - self.milked_at
-    min_time_between_milking = 30
+    min_time_between_milking = 2
     time_since_milked > min_time_between_milking
   end
 
@@ -41,7 +41,9 @@ class Cow < ActiveRecord::Base
   def hunger
     time_since_last_fed = (Time.now - self.fed_at).to_i
 
-    if(time_since_last_fed >= 60)
+    if(time_since_last_fed >= 260)
+      hunger_level = "retired - off to a home that provides adequate care"
+    elsif (time_since_last_fed >= 60)
       hunger_level = "starving"
     elsif (time_since_last_fed >= 45)
       hunger_level = "hungry"
