@@ -1,6 +1,6 @@
 require 'rubygems'
-require 'rspec-given'
-require 'rspec-its'
+# require 'rspec-given'
+# require 'rspec-its'
 require File.expand_path("../../config/application", __FILE__)
 
 RSpec.configure do |config|

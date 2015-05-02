@@ -16,7 +16,7 @@ describe 'Cow' do
     subject { cow.procreate }
     it { is_expected.to be_a_kind_of(Array) }
 
-    its(".length") { is_expected.to be_between(2,4).inclusive }
+    it { is_expected.to be_between(2,4).inclusive }
 
     it { is_expected.to be_a_kind_of(Offspring) }
   end
