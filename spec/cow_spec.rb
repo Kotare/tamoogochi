@@ -14,19 +14,18 @@ describe 'Cow' do
 
   describe '#procreate return' do
     subject { cow.procreate }
+
     it { is_expected.to be_a_kind_of(Array) }
-
-    it { is_expected.to be_between(2,4).inclusive }
-
-    it { is_expected.to be_a_kind_of(Offspring) }
+    it { expect(subject.length).to be_between(2,4).inclusive }
+    it { expect(subject.first).to be_a_kind_of(Offspring) }
   end
 
   describe '#check return' do
     subject { cow.check }
 
     it { is_expected.to be_a_kind_of(Hash) }
-    it { subject.keys.is_expected.to be =~ [:hunger, :age] }
-    it { subject.values.is_expected.not_to include(nil) }
+    it { expect(subject.keys).to contain_exactly(:hunger, :age) }
+    it { expect(subject.values).not_to include(nil) }
   end
 
   Offspring.destroy_all

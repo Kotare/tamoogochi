@@ -7,9 +7,9 @@ gem 'rspec'
 # gem 'rspec-its'
 gem 'rake'
 
-# group :test do
-#   gem 'rspec-given'
-# end
+group :test do
+  gem 'rspec-given'
+end
 # gem 'colorize'
 
 # group :test do
