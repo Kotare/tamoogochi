@@ -28,5 +28,22 @@ describe 'Cow' do
     it { expect(subject.values).not_to include(nil) }
   end
 
+  describe '#feed command' do
+    it 'updates the fed_at attribute' do
+
+    end
+  end
+
+  descibe '#milked command' do
+    it 'updates the milked_at attribute' do
+    end
+  end
+
+  describe '#milkable return' do
+    context
+    it 'it ' do
+    end
+  end
+
   Offspring.destroy_all
 end
